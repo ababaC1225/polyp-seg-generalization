@@ -4,6 +4,18 @@
 
 研究：用 Kvasir-SEG 训练，CVC-ClinicDB 作完全独立的外部测试；比较 U-Net、U-Net++、PraNet，分析小息肉及低质量图像。参见 [研究方案](docs/study_plan.md)、[来源及引用](docs/data_sources.md)、[环境实测](docs/environment.json)、[第一天报告](docs/day1_report.md)。
 
+## Web 前端
+
+`frontend/` 提供基于 Vue 3、Vue Router 和 Vite 的研究平台界面，包含项目概览、数据管理、模型训练、模型评估和单图预测页面。当前前端展示仓库内的实验状态和基线指标；训练、评估与预测操作尚未连接后端 API。
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+生产构建使用 `npm run build`，生成文件位于 `frontend/dist/`。
+
 ## 复用现有环境
 
 在项目根目录运行。`.local/python` 记录本机已验证的 Python 可执行文件，属于本地配置，不提交；没有安装或升级任何包。
