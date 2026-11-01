@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-10-19T21:06:02.797134+08:00",
+  "os": "PRETTY_NAME=\"Ubuntu 22.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"22.04\"\nVERSION=\"22.04.5 LTS (Jammy Jellyfish)\"\nVERSION_CODENAME=jammy\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=jammy",
+  "kernel": "Linux 6.8.0-136-generic x86_64 GNU/Linux",
+  "git": "git version 2.34.1",
+  "disk": "文件系统        大小  已用  可用 已用% 挂载点\n/dev/sda         15T  9.8T  4.0T   72% /home/16t",
+  "gpus": "index, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]\n0, NVIDIA GeForce RTX 4090, 580.173.02, 49140 MiB, 35142 MiB, 56 %\n1, NVIDIA GeForce RTX 4090, 580.173.02, 49140 MiB, 48494 MiB, 0 %\n2, NVIDIA GeForce RTX 4090, 580.173.02, 49140 MiB, 28908 MiB, 98 %\n3, NVIDIA GeForce RTX 4090, 580.173.02, 49140 MiB, 7532 MiB, 99 %",
+  "cuda_toolkit": "",
+  "environments_checked": {
+    "unet": {
+      "python": "3.11.15",
+      "torch": "2.13.0+cu130",
+      "numpy": "1.23.5",
+      "pillow": "9.3.0",
+      "torch_cuda": "13.0",
+      "cuda_available": true
+    },
+    "degcod": {
+      "python": "3.10.20",
+      "torch": "2.12.1+cu130",
+      "numpy": "2.2.6",
+      "pillow": "12.3.0",
+      "cuda_available": true
+    },
+    "base": {
+      "python": "3.13.5"
+    }
+  },
+  "selected": "unet",
+  "note": "复用环境，未安装软件。nvidia-smi CUDA 为驱动支持版本；torch_cuda 为框架运行时；PATH 未找到 nvcc。GPU 可用性变化，今天不占用 GPU。",
+  "conda_environment_count": 19,
+  "environment_listing_note": "完整环境路径仅存本地 .local/，避免把账户和他人项目路径纳入版本库；实际导入验证了 unet 与 degcod。"
+}

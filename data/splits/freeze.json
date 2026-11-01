@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "manifests": {
+    "train": {
+      "path": "data/splits/kvasir_train.csv",
+      "sha256": "d837cd91b312c4b2daf102da5c07070fb9c58d27c648add93bc433d76d77f11f",
+      "count": 800
+    },
+    "val": {
+      "path": "data/splits/kvasir_val.csv",
+      "sha256": "5929a17cfd7aa97487118b36c7cbd2c73d9f08f2b81dd2325fe3adad3f70a7d0",
+      "count": 100
+    },
+    "test": {
+      "path": "data/splits/kvasir_test.csv",
+      "sha256": "eee1ac5733f558c5a91fb4af8791db27d8fd1af90b0658bbc75a0879e1f1bfa6",
+      "count": 100
+    }
+  },
+  "inventory_sha256": "6f1a1acea756e95033a22cbcfe2908a3cbcf89adb78351f1b58ef7189a8e31f1",
+  "similarity_pairs_sha256": "27102243a00b66245e6ddf6223752f3f34958508217bfa8997fd02409d77c973",
+  "similarity_grouping": "All 40 high-priority screening pairs held together conservatively; not all are true duplicates.",
+  "size_thresholds": [
+    0.07823705480251435,
+    0.17028016362068238
+  ],
+  "size_definition": "Native mask foreground fraction; training-only tertiles, small <q1, medium [q1,q2), large >=q2.",
+  "mask_threshold": 128,
+  "prediction_threshold": 0.5,
+  "boundary_metric": "Inner 8-connected contour, outside image background, Chebyshev distance tolerance max(1, floor(0.005*diagonal+0.5)) native pixels.",
+  "test_evaluated": false,
+  "formal_training_protocol_frozen": false,
+  "limitation": "Image-level split; heuristic near-duplicate screening cannot establish patient/video independence."
+}

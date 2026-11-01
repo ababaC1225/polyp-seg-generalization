@@ -1,0 +1,66 @@
+{
+  "protocol_id": "unet_baseline_v1_20261020",
+  "status": "training_frozen",
+  "frozen_at_utc": "2026-10-20T14:14:30.891925+00:00",
+  "purpose": "formal_unet_baseline_v1",
+  "evaluate_test": false,
+  "model": "Self-implemented U-Net, base channels 32, bilinear upsampling, no pretrained weights",
+  "selection": "Maximum native-resolution mean validation Dice; earliest epoch wins exact ties",
+  "budget": "Exactly 100 epochs per seed, constant learning rate, no early stopping; budget chosen before formal training, not a convergence claim",
+  "initialization": "Every seed starts from scratch; pilot checkpoints are not loaded",
+  "evaluation_scope": "Validation only. Internal/external test release requires a separate final evaluation protocol covering all models and seeds.",
+  "validation_manifest_sha256": "5929a17cfd7aa97487118b36c7cbd2c73d9f08f2b81dd2325fe3adad3f70a7d0",
+  "runs": [
+    {
+      "name": "seed20261020",
+      "seed": 20261020,
+      "epochs": 100,
+      "config": "configs/formal/unet_seed20261020.json"
+    },
+    {
+      "name": "seed20261021",
+      "seed": 20261021,
+      "epochs": 100,
+      "config": "configs/formal/unet_seed20261021.json"
+    },
+    {
+      "name": "seed20261022",
+      "seed": 20261022,
+      "epochs": 100,
+      "config": "configs/formal/unet_seed20261022.json"
+    }
+  ],
+  "files_sha256": {
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/dataset.py": "ab10630dc8464d21ae6192a32cd0100875a13475d1f850afb53a579d2680665f",
+    "src/experiment.py": "6ffaf6709ddfcd5c213d402e44afe92301ddee0211747b38f3db199d35ba0b43",
+    "src/metrics.py": "ca51c7b48c084fae3bad88ad8769fbc6df633110cdfdf56a99a116c76e6a525d",
+    "src/model.py": "7fdfd00ca49c665958ff746c87c31cbe6fea43c47e2e56c44ecd9f61ac60f2d5",
+    "scripts/audit_splits.py": "148a75caded101f9047c9ccdab261c352cd4d82450613b1c4e95ed55aed9c0b8",
+    "scripts/check_data.py": "93558f10a60ed746c704744ddbb4e1c3638ea6709f8b3a1fd9dc585d852b720f",
+    "scripts/evaluate.py": "69cdbeb11f169959f32d50a32b189fc95e68f617cad0313f469914219867e8ed",
+    "scripts/extract_kvasir.py": "27da0210b55fe8ff167fe49d3eb5b167e6c44bb0419d88632ab84534fa07244a",
+    "scripts/freeze_splits.py": "cc758a9b73990eaf0dbfa0e74fa6946cc2af97cc79341771be2a167197380cac",
+    "scripts/make_splits.py": "3283090dd16458d66fc8c39b95b63c5c59819cb542b520c9dd524b113b797271",
+    "scripts/overfit_check.py": "3d0a239d732fd0a074d981d6f519f3ef86e17f0730fefe4e0c1a596bfc8481f9",
+    "scripts/predict.py": "7c410cae89b12aea02d83f55a0393dcb08dca0e6abbff2ae394d4e30f42877ef",
+    "scripts/run_baselines.py": "616cde82a541e3f2421929700b906a51470f007db858d386da0662b230a9d417",
+    "scripts/smoke_test.py": "9d88fb8d2509af4a1b544881921badb6c2796688996ac56ed1413cb920a50b05",
+    "scripts/train.py": "1efaa0a729682149ff3ec384cb00b9661935d4f523cbfc10688cfebea84b3060",
+    "configs/formal/unet_seed20261020.json": "fd4a877309c93a687d70166f63e9e59bc2a843cbab595b5645cedb9c98bc5f75",
+    "configs/formal/unet_seed20261021.json": "c373771d997553a4c476a30769bfccea3f93463cf270614570dc4471367b7a6a",
+    "configs/formal/unet_seed20261022.json": "c28f9109219218edf75e689c2d007132d4a9015f16b404503eb74d9d99da4aa3",
+    "data/splits/kvasir_test.csv": "eee1ac5733f558c5a91fb4af8791db27d8fd1af90b0658bbc75a0879e1f1bfa6",
+    "data/splits/kvasir_train.csv": "d837cd91b312c4b2daf102da5c07070fb9c58d27c648add93bc433d76d77f11f",
+    "data/splits/kvasir_val.csv": "5929a17cfd7aa97487118b36c7cbd2c73d9f08f2b81dd2325fe3adad3f70a7d0",
+    "data/splits/near_duplicate_candidates.csv": "27102243a00b66245e6ddf6223752f3f34958508217bfa8997fd02409d77c973",
+    "data/splits/freeze.json": "b0fc4ccf765fb871705e4f5977396cec8b49d5b98b1866d8ec198e5479eda057",
+    "data/splits/split_metadata.json": "749acee888d2a688e5a025638f1c27bb2e114c75bb0ed4aa0514c6b1f98486f4",
+    "requirements.txt": "a06212228c22c5e688ec1a1614c41599596cdf55a3bad9fa0c3691c0cb1fe042"
+  },
+  "preflight": {
+    "data_hashes_sha256": "53feff30f7236165301ead47cc793f6aaea0b4f51d7eb813640030723d9b5775",
+    "queue_integration_sha256": "1d5bffe97329a0c69c8ed8b15574d7a90c16d588f38b70a267e0aa92183181dc"
+  },
+  "limitation": "Image-level split with heuristic similarity grouping; no verified patient/video independence. CVC-ClinicDB not acquired."
+}

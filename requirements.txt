@@ -1,0 +1,6 @@
+# Reuse the verified local unet environment; no installation needed.
+numpy==1.23.5
+Pillow==9.3.0
+torch==2.13.0+cu130
+matplotlib==3.6.2
+# Torch wheel provenance/index must be re-verified before recreating elsewhere.

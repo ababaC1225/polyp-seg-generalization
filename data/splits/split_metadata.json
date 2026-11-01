@@ -1,0 +1,30 @@
+{
+  "seed": 20261019,
+  "requested_ratios": [
+    0.8,
+    0.1,
+    0.1
+  ],
+  "outputs": {
+    "kvasir_train.csv": {
+      "count": 800,
+      "sha256": "d837cd91b312c4b2daf102da5c07070fb9c58d27c648add93bc433d76d77f11f"
+    },
+    "kvasir_val.csv": {
+      "count": 100,
+      "sha256": "5929a17cfd7aa97487118b36c7cbd2c73d9f08f2b81dd2325fe3adad3f70a7d0"
+    },
+    "kvasir_test.csv": {
+      "count": 100,
+      "sha256": "eee1ac5733f558c5a91fb4af8791db27d8fd1af90b0658bbc75a0879e1f1bfa6"
+    }
+  },
+  "inventory_sha256": "6f1a1acea756e95033a22cbcfe2908a3cbcf89adb78351f1b58ef7189a8e31f1",
+  "identity_grouping": false,
+  "group_file_sha256": null,
+  "similarity_pairs": 40,
+  "similarity_pairs_sha256": "27102243a00b66245e6ddf6223752f3f34958508217bfa8997fd02409d77c973",
+  "method": "seeded shuffle of sorted union-find groups, allocate to largest remaining target deficit",
+  "limitation": "No verified patient/video mapping supplied; heuristic similarity grouping cannot exclude all related frames or patient leakage.",
+  "external": "CVC-ClinicDB not downloaded; no external split fabricated; all future samples evaluation-only"
+}

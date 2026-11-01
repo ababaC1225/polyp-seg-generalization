@@ -1,0 +1,33 @@
+{
+  "model": "unet",
+  "base_channels": 32,
+  "image_size": [
+    352,
+    352
+  ],
+  "batch_size": 8,
+  "epochs": 100,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0001,
+  "seed": 20261022,
+  "num_workers": 4,
+  "cpu_threads": 4,
+  "amp": true,
+  "augment": true,
+  "threshold": 0.5,
+  "boundary_tolerance_fraction": 0.005,
+  "train_manifest": "data/splits/kvasir_train.csv",
+  "val_manifest": "data/splits/kvasir_val.csv",
+  "split_lock": "data/splits/freeze.json",
+  "purpose": "formal_unet_ablation_v1",
+  "condition": "B",
+  "appearance_augmentation": {
+    "enabled": false
+  },
+  "boundary_supervision": {
+    "enabled": true,
+    "radius": 2,
+    "weight": 0.2,
+    "positive_weight": 5.0
+  }
+}

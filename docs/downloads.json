@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-19T21:11:18.362387+08:00",
+  "kvasir_seg": {
+    "url": "https://datasets.simula.no/downloads/kvasir-seg.zip",
+    "archive": "data/raw/kvasir-seg.zip",
+    "bytes": 46227172,
+    "sha256": "03b30e21d584e04facf49397a2576738fd626815771afbbf788f74a7153478f7",
+    "zip_crc": "passed",
+    "member_count": 2004,
+    "tls": "verified using system roots plus verified Sectigo intermediate; project-local bundle"
+  },
+  "cvc_clinicdb": {
+    "status": "not_downloaded",
+    "reason": "Official current page has no download target; legacy URL HTTP 404"
+  }
+}

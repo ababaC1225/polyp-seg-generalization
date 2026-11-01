@@ -1,0 +1,12 @@
+{
+  "metadata_file": "data/raw/kvasir_seg/Kvasir-SEG/kavsir_bboxes.json",
+  "entries": 1000,
+  "record_fields": {
+    "height": 1000,
+    "width": 1000,
+    "bbox": 1000
+  },
+  "patient_or_video_mapping_found": false,
+  "scope": "Official release page, author README and all archive non-image files inspected; filenames not treated as patient/video IDs",
+  "decision": "Provisional image-level split with exact-image-duplicate grouping; unknown patient/video grouping and near-frame leakage remain"
+}

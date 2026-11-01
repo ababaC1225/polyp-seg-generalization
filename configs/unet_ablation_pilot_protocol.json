@@ -1,0 +1,69 @@
+{
+  "protocol_id": "unet_ablation_pilot_v1_20261021",
+  "status": "training_frozen",
+  "frozen_at_utc": "2026-10-21T04:13:23.413280+00:00",
+  "purpose": "ablation_pilot_not_formal",
+  "evaluate_test": false,
+  "runs": [
+    {
+      "name": "A_seed20261020",
+      "condition": "A",
+      "seed": 20261020,
+      "epochs": 5,
+      "config": "configs/ablation_pilot/A_seed20261020.json"
+    },
+    {
+      "name": "B_seed20261020",
+      "condition": "B",
+      "seed": 20261020,
+      "epochs": 5,
+      "config": "configs/ablation_pilot/B_seed20261020.json"
+    },
+    {
+      "name": "AB_seed20261020",
+      "condition": "AB",
+      "seed": 20261020,
+      "epochs": 5,
+      "config": "configs/ablation_pilot/AB_seed20261020.json"
+    }
+  ],
+  "validation_manifest_sha256": "5929a17cfd7aa97487118b36c7cbd2c73d9f08f2b81dd2325fe3adad3f70a7d0",
+  "selection": "Maximum native-resolution validation Dice; earliest tie; no early stopping",
+  "budget": "5 epochs per run, from scratch; only A/B factors differ from baseline",
+  "initialization": "Shared backbone/segmentation initialization and CPU RNG match baseline; auxiliary head uses forked RNG",
+  "appearance_rng": "Blake2b of current post-flip CPU RNG state seeds local generator; global RNG unchanged",
+  "boundary_definition": "Inner radius-2 contour at training resolution; outside-image background",
+  "validation_loss": "Segmentation BCE+Dice only; training total adds 0.2 times boundary BCE(pos_weight=5)+Dice",
+  "held_out_evaluated": false,
+  "files_sha256": {
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/augmentation.py": "4f240101829bc9073c946fe24af07a4074fbc15340ae6ddfb412f5640dcfdee9",
+    "src/dataset.py": "68bad4b9c03510e3e1a16620163c1a84e078eb8ad584ec987f2ecbe27e1e5423",
+    "src/experiment.py": "c38c9f6c4ed95fcfabd96a632de855a972b5fb7bfd79dbe0f951b0eefb595007",
+    "src/metrics.py": "bcb2e813d4cd59697af71ff74aaafcbc67c9790e354c1ee55cccf3d15a55169d",
+    "src/model.py": "c84fc8de91b48c640517691ad9ee504db3626e661363ba00618667fd77455566",
+    "scripts/analyze_baseline.py": "029466fe2a672438bda8edfc0c97ea0e7d8132a5badc5683087512a18e891884",
+    "scripts/audit_splits.py": "148a75caded101f9047c9ccdab261c352cd4d82450613b1c4e95ed55aed9c0b8",
+    "scripts/check_data.py": "93558f10a60ed746c704744ddbb4e1c3638ea6709f8b3a1fd9dc585d852b720f",
+    "scripts/evaluate.py": "69cdbeb11f169959f32d50a32b189fc95e68f617cad0313f469914219867e8ed",
+    "scripts/extract_kvasir.py": "27da0210b55fe8ff167fe49d3eb5b167e6c44bb0419d88632ab84534fa07244a",
+    "scripts/freeze_ablation.py": "d0085c63b184d1b10916fc704e767f6e3887994d64a1cea65de6081866d3feef",
+    "scripts/freeze_splits.py": "cc758a9b73990eaf0dbfa0e74fa6946cc2af97cc79341771be2a167197380cac",
+    "scripts/make_splits.py": "3283090dd16458d66fc8c39b95b63c5c59819cb542b520c9dd524b113b797271",
+    "scripts/overfit_check.py": "b4fcb9f243c1be41edf3d7f6ca155da245b2a9ca14e56c0eb6821c01dfe67af9",
+    "scripts/predict.py": "7c410cae89b12aea02d83f55a0393dcb08dca0e6abbff2ae394d4e30f42877ef",
+    "scripts/run_baselines.py": "7db8ab17cd5814f1f578c79e9c2af35b9609f4c27f892a992e796f9be02456ce",
+    "scripts/smoke_test.py": "9d88fb8d2509af4a1b544881921badb6c2796688996ac56ed1413cb920a50b05",
+    "scripts/train.py": "65209696767890cab9656898d7864e855e701a793a9d7bf2da7d40cb59dac7d8",
+    "configs/ablation_pilot/AB_seed20261020.json": "53b067da97b4d91a3459ce3507654772dad5b5d535b894eaacc4074417284a60",
+    "configs/ablation_pilot/A_seed20261020.json": "b2e6018de566b6549219a2927d75360e84dbf037bddbf7404f4030597df05220",
+    "configs/ablation_pilot/B_seed20261020.json": "875ad0f99a76eab5a8eb4db02d7fb8c01328d42d8b3894775da367e6046b983f",
+    "data/splits/kvasir_test.csv": "eee1ac5733f558c5a91fb4af8791db27d8fd1af90b0658bbc75a0879e1f1bfa6",
+    "data/splits/kvasir_train.csv": "d837cd91b312c4b2daf102da5c07070fb9c58d27c648add93bc433d76d77f11f",
+    "data/splits/kvasir_val.csv": "5929a17cfd7aa97487118b36c7cbd2c73d9f08f2b81dd2325fe3adad3f70a7d0",
+    "data/splits/near_duplicate_candidates.csv": "27102243a00b66245e6ddf6223752f3f34958508217bfa8997fd02409d77c973",
+    "data/splits/freeze.json": "b0fc4ccf765fb871705e4f5977396cec8b49d5b98b1866d8ec198e5479eda057",
+    "data/splits/split_metadata.json": "749acee888d2a688e5a025638f1c27bb2e114c75bb0ed4aa0514c6b1f98486f4",
+    "requirements.txt": "a06212228c22c5e688ec1a1614c41599596cdf55a3bad9fa0c3691c0cb1fe042"
+  }
+}

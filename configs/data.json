@@ -1,0 +1,10 @@
+{
+  "seed": 20261019,
+  "ratios": [0.8, 0.1, 0.1],
+  "dataset": "kvasir_seg",
+  "mask_threshold": 128,
+  "smoke_size": [256, 256],
+  "external_dataset": "CVC-ClinicDB",
+  "external_status": "pending_official_download",
+  "external_use": "evaluation_only_after_protocol_and_checkpoints_frozen"
+}
