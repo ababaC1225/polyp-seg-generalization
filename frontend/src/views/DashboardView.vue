@@ -45,10 +45,10 @@ const experiments = [
           以 Kvasir-SEG 训练，使用独立数据集验证泛化能力。统一管理实验配置、模型评估与预测结果。
         </p>
         <div class="hero-panel__actions">
-          <RouterLink class="button button--primary" to="/training"
-            ><AppIcon name="play" :size="17" /> 新建训练任务</RouterLink
+          <RouterLink class="button button--primary" to="/prediction"
+            ><AppIcon name="upload" :size="17" /> 上传图片识别</RouterLink
           >
-          <RouterLink class="button button--ghost" to="/evaluation">查看评估报告</RouterLink>
+          <RouterLink class="button button--ghost" to="/training">新建训练任务</RouterLink>
         </div>
       </div>
       <div class="hero-visual" aria-label="分割流程示意图">

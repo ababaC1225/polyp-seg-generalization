@@ -25,4 +25,14 @@ npm run build
 npm run preview
 ```
 
-当前页面使用项目已有实验数据进行静态展示。创建训练任务和执行单图预测需要后续接入 Python 后端 API。
+## 图片识别
+
+开发服务器会将 `/api` 代理到 `http://127.0.0.1:8000`。先在仓库根目录启动 Python API：
+
+```bash
+PYTHON="$(cat .local/python)"
+"$PYTHON" -m pip install -r requirements-web.txt
+"$PYTHON" -m uvicorn api.main:app --host 127.0.0.1 --port 8000
+```
+
+随后打开“单图预测”页面，即可上传 JPG/PNG 并查看真实模型生成的掩膜、概率图和叠加图。模型训练任务目前仍是界面展示，尚未接入任务调度 API。

@@ -78,6 +78,9 @@ function closeMenu() {
           </div>
         </div>
         <div class="topbar__actions">
+          <RouterLink class="button button--primary topbar-predict" to="/prediction">
+            <AppIcon name="upload" :size="18" /> 上传图片识别
+          </RouterLink>
           <div class="system-status"><span class="status-dot"></span>系统正常</div>
           <a
             class="icon-button"
