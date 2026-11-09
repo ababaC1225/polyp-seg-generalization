@@ -44,6 +44,11 @@ const experiments = [
         <p>
           以 Kvasir-SEG 训练，使用独立数据集验证泛化能力。统一管理实验配置、模型评估与预测结果。
         </p>
+        <div class="hero-panel__meta">
+          <span><AppIcon name="check" :size="16" /> Protocol frozen</span>
+          <span><AppIcon name="activity" :size="16" /> GPU ready</span>
+          <span><AppIcon name="database" :size="16" /> 1,000 samples</span>
+        </div>
         <div class="hero-panel__actions">
           <RouterLink class="button button--primary" to="/prediction"
             ><AppIcon name="upload" :size="17" /> 上传图片识别</RouterLink
@@ -56,6 +61,7 @@ const experiments = [
         <div class="visual-orbit visual-orbit--inner"></div>
         <div class="scan-frame">
           <div class="scan-frame__texture"></div>
+          <div class="scan-beam"></div>
           <div class="polyp-shape"></div>
           <div class="scan-cross scan-cross--one"></div>
           <div class="scan-cross scan-cross--two"></div>

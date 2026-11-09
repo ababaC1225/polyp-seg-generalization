@@ -24,11 +24,16 @@ function closeMenu() {
 
 <template>
   <div class="app-shell">
+    <div class="app-ambient app-ambient--one" aria-hidden="true"></div>
+    <div class="app-ambient app-ambient--two" aria-hidden="true"></div>
     <div v-if="mobileMenuOpen" class="sidebar-backdrop" aria-hidden="true" @click="closeMenu"></div>
     <aside class="sidebar" :class="{ 'is-open': mobileMenuOpen }">
       <div class="brand">
         <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div><strong>PolypLab</strong><small>Research Console</small></div>
+        <div>
+          <strong>PolypLab <sup>AI</sup></strong
+          ><small>Clinical Research Studio</small>
+        </div>
         <button class="icon-button sidebar-close" aria-label="关闭导航" @click="closeMenu">
           <AppIcon name="close" :size="20" />
         </button>
@@ -54,6 +59,7 @@ function closeMenu() {
       <div class="sidebar-note">
         <div class="sidebar-note__top"><span class="live-dot"></span><span>研究环境</span></div>
         <strong>本地运行 · GPU Ready</strong><small>仅用于科研，不用于临床诊断</small>
+        <div class="compute-meter"><span></span></div>
       </div>
       <div class="sidebar-footer">
         <div class="avatar">R</div>
@@ -73,11 +79,13 @@ function closeMenu() {
             <AppIcon name="menu" :size="22" />
           </button>
           <div>
+            <span class="page-context">RESEARCH WORKSPACE / {{ pageTitle }}</span>
             <h1>{{ pageTitle }}</h1>
             <p>{{ pageDescription }}</p>
           </div>
         </div>
         <div class="topbar__actions">
+          <div class="model-chip"><span>MODEL</span><strong>U-Net · v1</strong></div>
           <RouterLink class="button button--primary topbar-predict" to="/prediction">
             <AppIcon name="upload" :size="18" /> 上传图片识别
           </RouterLink>
