@@ -16,8 +16,16 @@ export default defineConfig({
     },
   },
   server: {
+    host: '127.0.0.1',
+    port: 5274,
+    strictPort: true,
     proxy: {
-      '/api': 'http://127.0.0.1:8000',
+      '/api': 'http://127.0.0.1:8100',
     },
+  },
+  preview: {
+    host: '127.0.0.1',
+    port: 5275,
+    strictPort: true,
   },
 })

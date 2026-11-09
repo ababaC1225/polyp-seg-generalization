@@ -13,8 +13,8 @@
 PYTHON="$(cat .local/python)"
 "$PYTHON" -m pip install -r requirements-web.txt
 
-# 终端一：启动推理 API，默认使用 cuda:0
-"$PYTHON" -m uvicorn api.main:app --host 127.0.0.1 --port 8000
+# 终端一：启动推理 API，固定使用 8100 端口，默认使用 cuda:0
+"$PYTHON" -m uvicorn api.main:app --host 127.0.0.1 --port 8100
 
 # 终端二：启动 Vue 开发服务器
 cd frontend
@@ -22,7 +22,7 @@ npm install
 npm run dev
 ```
 
-访问前端输出的本地地址，进入“单图预测”即可上传识别。可通过 `POLYP_DEVICE=cpu` 切换到 CPU，或用 `POLYP_CHECKPOINT=/path/to/best.pt` 指定权重。生产构建使用 `npm run build`，生成文件位于 `frontend/dist/`。
+访问固定地址 `http://localhost:5274/`，进入“单图预测”即可上传识别。前端启用了严格端口检查，不会在端口冲突时自动跳号。可通过 `POLYP_DEVICE=cpu` 切换到 CPU，或用 `POLYP_CHECKPOINT=/path/to/best.pt` 指定权重。生产构建使用 `npm run build`，生成文件位于 `frontend/dist/`；本地预览固定使用 `5275` 端口。
 
 ## 复用现有环境
 
